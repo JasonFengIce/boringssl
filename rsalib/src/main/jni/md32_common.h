@@ -49,7 +49,7 @@
 #ifndef OPENSSL_HEADER_MD32_COMMON_H
 #define OPENSSL_HEADER_MD32_COMMON_H
 
-#include "base.h"
+#include "openssl/base.h"
 
 #include <assert.h>
 #include <string.h>

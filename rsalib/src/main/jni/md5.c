@@ -54,7 +54,7 @@
  * copied and put under another distribution licence
  * [including the GNU Public Licence.] */
 
-#include "md5.h"
+#include "openssl/md5.h"
 
 #include <string.h>
 

@@ -1,7 +1,7 @@
 #include <jni.h>
 #include <string.h>
 #include <stdio.h>
-#include "md5.h"
+#include "openssl/md5.h"
 
 
 jstring md5(JNIEnv *env, char *source) {
