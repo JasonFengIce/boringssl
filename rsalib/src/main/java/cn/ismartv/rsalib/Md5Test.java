@@ -8,5 +8,5 @@ public class Md5Test {
         System.loadLibrary("rsa");
     }
 
-    public static native String md5Test();
+    public static native String md5Test(String str);
 }
