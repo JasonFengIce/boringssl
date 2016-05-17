@@ -57,7 +57,9 @@
 #ifndef OPENSSL_HEADER_DIGEST_INTERNAL_H
 #define OPENSSL_HEADER_DIGEST_INTERNAL_H
 
-#include "openssl/base.h"
+
+#include <stdint.h>
+#include "../../../openssl/base.h"
 
 #if defined(__cplusplus)
 extern "C" {

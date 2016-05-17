@@ -49,10 +49,10 @@
 #ifndef OPENSSL_HEADER_MD32_COMMON_H
 #define OPENSSL_HEADER_MD32_COMMON_H
 
-#include "openssl/base.h"
 
 #include <assert.h>
 #include <string.h>
+#include <stdint.h>
 
 #if defined(__cplusplus)
 extern "C" {

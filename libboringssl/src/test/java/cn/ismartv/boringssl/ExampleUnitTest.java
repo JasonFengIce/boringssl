@@ -1,4 +1,4 @@
-package cn.ismartv.rsalib;
+package cn.ismartv.boringssl;
 
 import org.junit.Test;
 

@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import cn.ismartv.rsalib.Md5Test;
+import cn.ismartv.boringssl.Md5;
 
 public class MainActivity extends AppCompatActivity {
     EditText editText;
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void md5(View view) {
-        String result = Md5Test.md5Test(editText.getText().toString());
+        String result = Md5.md5(editText.getText().toString());
         TextView textView = (TextView) findViewById(R.id.test);
         textView.setText(result);
     }

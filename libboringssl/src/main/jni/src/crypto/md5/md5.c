@@ -54,9 +54,11 @@
  * copied and put under another distribution licence
  * [including the GNU Public Licence.] */
 
-#include "openssl/md5.h"
 
 #include <string.h>
+#include <stdint.h>
+#include "../../../openssl/base.h"
+#include "../../../openssl/md5.h"
 
 
 uint8_t *MD5(const uint8_t *data, size_t len, uint8_t *out) {
@@ -114,7 +116,7 @@ void md5_block_data_order(uint32_t *state, const uint8_t *data, size_t num);
   } while (0)
 #define HASH_BLOCK_DATA_ORDER md5_block_data_order
 
-#include "md32_common.h"
+#include "../digest/md32_common.h"
 
 /* As pointed out by Wei Dai <weidai@eskimo.com>, the above can be
  * simplified to the code below.  Wei attributes these optimizations

@@ -1,1 +1,1 @@
-include ':app', ':rsalib'
+include ':app', ':libboringssl'

@@ -1,0 +1,72 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+def projectName = "boringssl"
+def versionTag = "1.0"
+def groupId = "cn.ismartv.boringssl"
+def siteUrl = 'git@github.com:JasonFengIce/boringssl.git'
+def gitUrl = 'git@github.com:JasonFengIce/boringssl.git'
+
+
+version = versionTag
+group = groupId
+
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            packaging 'aar'
+        }
+    }
+}
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    pkg {
+        repo = 'maven'
+        name = projectName
+        desc = 'TvHorizontalScrollView'
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ['Apache-2.0']
+        labels = ['tv', 'android', 'view']
+        publicDownloadNumbers = true
+    }
+}
+
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+
+        ndk {
+            moduleName "boringssl"
+            abiFilters "armeabi-v7a"
+            ldLibs = ['log']
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+}
