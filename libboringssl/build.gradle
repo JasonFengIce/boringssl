@@ -6,7 +6,7 @@ Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 def projectName = "boringssl"
-def versionTag = "1.0"
+def versionTag = "1.1"
 def groupId = "cn.ismartv.boringssl"
 def siteUrl = 'git@github.com:JasonFengIce/boringssl.git'
 def gitUrl = 'git@github.com:JasonFengIce/boringssl.git'
