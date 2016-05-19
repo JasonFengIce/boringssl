@@ -7,7 +7,6 @@
 JNIEXPORT jstring JNICALL
 Java_cn_ismartv_boringssl_Md5_md5(JNIEnv *env, jclass type, jstring str_) {
     const char *str = (*env)->GetStringUTFChars(env, str_, 0);
-    (*env)->ReleaseStringUTFChars(env, str_, str);
     unsigned char md[16];
     int i;
     char tmp[3] = {'\0'}, buf[33] = {'\0'};
@@ -16,5 +15,6 @@ Java_cn_ismartv_boringssl_Md5_md5(JNIEnv *env, jclass type, jstring str_) {
         sprintf(tmp, "%2.2x", md[i]);
         strcat(buf, tmp);
     }
+    (*env)->ReleaseStringUTFChars(env, str_, str);
     return (*env)->NewStringUTF(env, buf);
 }
